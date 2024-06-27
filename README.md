@@ -83,7 +83,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Acknowledgments
 
 - Thanks to the authors of the dataset and all the contributors of the libraries used in this project.
-
-```
-
-You can copy this content and save it as `README.md` in your project directory. This file provides a comprehensive overview of your project, including its structure, how to set it up, and how to run it.
+-The dataset used here has been downloaded from Kaggle.
+-The project has been developed by me as a part of exploring the various ML algorithms.
