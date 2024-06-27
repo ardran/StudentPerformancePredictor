@@ -36,3 +36,18 @@ Install the required Python packages using pip:
 
 ```bash
 pip install Flask joblib pandas scikit-learn
+
+### Step 2: Train the Model
+Run the train_model.py script to train the model and save it along with the transformer:
+
+```bash
+python train_model.py
+
+### Step 3: Run the Flask App
+Run the app.py script to start the Flask application:
+
+```bash
+python app.py
+
+### Step 4: Access the Web Application
+Open your web browser and navigate to http://127.0.0.1:5000/. You should see the form where you can input the student's information and get the predicted scores.
