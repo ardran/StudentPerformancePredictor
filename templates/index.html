@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance Predictor</title>
+</head>
+<body>
+    <h1>Student Performance Predictor</h1>
+    <form id="prediction-form">
+        <label for="gender">Gender:</label>
+        <select id="gender">
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+        </select>
+        <br><br>
+        
+        <label for="parental_education">Parental Level of Education:</label>
+        <select id="parental_education">
+            <option value="bachelor's degree">Bachelor's Degree</option>
+            <option value="some college">Some College</option>
+            <option value="master's degree">Master's Degree</option>
+            <option value="associate's degree">Associate's Degree</option>
+            <option value="high school">High School</option>
+            <option value="some high school">Some High School</option>
+        </select>
+        <br><br>
+        
+        <label for="test_preparation">Test Preparation Course:</label>
+        <select id="test_preparation">
+            <option value="none">None</option>
+            <option value="completed">Completed</option>
+        </select>
+        <br><br>
+        
+        <button type="button" onclick="predictPerformance()">Predict</button>
+    </form>
+    
+    <h2>Predicted Scores:</h2>
+    <p>Math Score: <span id="math_score"></span></p>
+    <p>Reading Score: <span id="reading_score"></span></p>
+    <p>Writing Score: <span id="writing_score"></span></p>
+    
+    <script>
+        async function predictPerformance() {
+            const gender = document.getElementById('gender').value;
+            const parentalEducation = document.getElementById('parental_education').value;
+            const testPreparation = document.getElementById('test_preparation').value;
+            
+            const response = await fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    gender: gender,
+                    'parental level of education': parentalEducation,
+                    'test preparation course': testPreparation
+                })
+            });
+            
+            const data = await response.json();
+            document.getElementById('math_score').textContent = data.math_score;
+            document.getElementById('reading_score').textContent = data.reading_score;
+            document.getElementById('writing_score').textContent = data.writing_score;
+        }
+    </script>
+</body>
+</html>
