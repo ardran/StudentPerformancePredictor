@@ -76,12 +76,10 @@ If you wish to contribute to this project, please follow these steps:
 4. Push to the branch (`git push origin feature-branch`).
 5. Create a new Pull Request.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ## Acknowledgments
 
 - Thanks to the authors of the dataset and all the contributors of the libraries used in this project.
+
 -The dataset used here has been downloaded from Kaggle.
+
 -The project has been developed by me as a part of exploring the various ML algorithms.
